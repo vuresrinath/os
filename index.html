@@ -1,8 +1,55 @@
-<doctype html>
-  <html>
-    <head>
-      <body>
-        <tittle>operating system </tittle>
-      </body>
-    </head>
-  </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberOS Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="login-screen">
+        <h1>CyberOS Login</h1>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="dashboard" class="hidden">
+        <header>
+            <h1>CyberOS Dashboard</h1>
+            <div id="system-stats">
+                <span>CPU: <span id="cpu-usage">Loading...</span></span>
+                <span>RAM: <span id="ram-usage">Loading...</span></span>
+                <span>Network: <span id="network-usage">Loading...</span></span>
+            </div>
+        </header>
+        
+        <nav id="taskbar">
+            <button onclick="openTerminal()">Terminal</button>
+            <button onclick="openTools()">Hacking Tools</button>
+            <button onclick="openFirewall()">Firewall</button>
+        </nav>
+        
+        <main>
+            <section id="virtual-machine-manager">
+                <h2>VM Manager</h2>
+                <p>Manage your sandboxed virtual machines here.</p>
+            </section>
+            
+            <section id="security-alerts">
+                <h2>Security Alerts</h2>
+                <ul id="alerts-list">
+                    <li>No threats detected.</li>
+                </ul>
+            </section>
+        </main>
+        
+        <div id="terminal" class="window hidden">
+            <h2>Command Terminal</h2>
+            <textarea readonly>Welcome to CyberOS Terminal...</textarea>
+            <input type="text" id="terminal-input" placeholder="Enter command">
+        </div>
+    </div>
+</body>
+</html>
